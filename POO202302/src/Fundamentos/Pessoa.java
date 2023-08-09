@@ -7,8 +7,8 @@ package Fundamentos;
 public class Pessoa {
     //atributos - características
     private String nome;
-    public String telefone;
-    public int idade;
+    private String telefone;
+    private int idade;
     
     //métodos - ações
     public String perguntarONome(Pessoa pessoa){

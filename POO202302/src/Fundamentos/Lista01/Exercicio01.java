@@ -26,9 +26,18 @@ public class Exercicio01 {
             switch (opcao) {
                 case 1:
                     //Criar pessoa
+                    System.out.println("Digite o nome");
+                    p.setNome(teclado.nextLine());
+                    System.out.println("Digite o CPF");
+                    p.setCpf(teclado.nextLine());
+                    System.out.println("Digite o sexo");
+                    p.setSexo(teclado.nextLine().charAt(0));
+                    System.out.println("Digite a idade");
+                    p.setIdade(Integer.parseInt(teclado.nextLine()));
                     break;
                 case 2:
                     //mostrar pessoa
+                    System.out.println(p.imprimir());
                     break;
                 case 3:
                     System.out.println("O programa será fechado");

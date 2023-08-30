@@ -88,7 +88,8 @@ public class AulaLista {
         for (Fornecedor forn : fornecedores) {
             System.out.println("- "+ forn.getNome());
             for(Produto pr : forn.getProdutos()){
-                System.out.println("   - Produto: "+ pr.getNome());
+                System.out.println("   - Produto: "+ 
+                        pr.getNome());
             }
         }
     }

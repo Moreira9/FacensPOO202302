@@ -2,31 +2,30 @@ package Fundamentos.associacao;
 
 public class Automovel {
 
-    private String modelo;
-    private String cor;
-    private int ano;
+    //private String modelo;
+    protected String cor;
+    int ano;
     private Motor motor;
     private Pessoa dono;
 
-    public Automovel(String modelo, String cor, int ano) {
-        this.modelo = modelo;
+    public Automovel(String cor, int ano) {
+        //this.modelo = modelo;
         this.cor = cor;
         this.ano = ano;
         this.motor = new Motor(this);
+       
     }
+
+    @Override
+    public String toString() {
+        return "Minha cor é "+this.cor;
+    }
+    
 
     public void acelerar() {
         motor.setFatorPotencia(
                 motor.getFatorPotencia() + 1
         );
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 
     public String getCor() {

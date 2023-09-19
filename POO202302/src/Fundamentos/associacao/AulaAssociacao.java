@@ -5,6 +5,7 @@ package Fundamentos.associacao;
  * @author edson
  */
 public class AulaAssociacao {
+    /*
     public static void main(String[] args) {
         //Motor m = new Motor();
         Automovel a1 = 
@@ -33,4 +34,5 @@ public class AulaAssociacao {
                         getAutomovel().
                         getDono().getNome());
     }
+    */
 }

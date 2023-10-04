@@ -15,7 +15,7 @@ public class AulaHeranca {
         fer.setAno(2023);
         fer.setCor("vermelha");
         System.out.println(fer.getMotor().getFatorPotencia());
-        Automovel auto = new Automovel("azul", 2000);
+        //Automovel auto = new Automovel("azul", 2000);
         System.out.println(f.toString());
         System.out.println(fer.toString());
         fer.acelerar();
@@ -28,6 +28,12 @@ public class AulaHeranca {
         automoveis.add(f);
         for (Automovel a : automoveis) {
             System.out.println(a.getCor());
+            if (a instanceof Ferrari) {
+                
+                Ferrari ferr = (Ferrari) a;
+                System.out.println(ferr.desligarOAr());
+            }
+     
         }
         
         //demostração que as classes herdadas se comportam como os automóveis
@@ -37,5 +43,7 @@ public class AulaHeranca {
         pessoa.setAutomoveis(automoveis);
         pessoa.getAutomoveis().get(0).getMotor()
                 .getAutomovel().getDono();
+        
+        //Automovel au = new Automovel("branco", 2000);
     }
 }

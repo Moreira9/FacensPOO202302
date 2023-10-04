@@ -8,7 +8,7 @@ import Fundamentos.heranca.Ferrari;
  */
 public class TesteNivelAcessibilidade {
     public static void main(String[] args) {
-        Automovel a = new Automovel("branca", 0);
-        System.out.println(a.ano);
+        //Automovel a = new Automovel("branca", 0);
+        //System.out.println(a.ano);
     }
 }

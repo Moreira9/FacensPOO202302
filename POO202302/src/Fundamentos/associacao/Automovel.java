@@ -1,6 +1,6 @@
 package Fundamentos.associacao;
 
-public class Automovel {
+public abstract class Automovel {
 
     //private String modelo;
     protected String cor;

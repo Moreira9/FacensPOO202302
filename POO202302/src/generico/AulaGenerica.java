@@ -29,7 +29,8 @@ public class AulaGenerica {
         
         //classe genérica
         Generica<Pessoa, String> g1 = new Generica<>();
-        g1.set
+        g1.setObjeto1(p);
+        g1.setObjeto2(nome);
         
         
     }

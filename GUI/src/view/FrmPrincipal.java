@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
 
 /**
  *
@@ -78,11 +79,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 834, Short.MAX_VALUE)
+            .addGap(0, 973, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGap(0, 587, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Configurações");
@@ -146,11 +147,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,11 +188,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         if (!cli.isVisible()) {
             jDesktopPane1.add(cli);
             cli.setVisible(true);
-        }
-        else
+            try {
+                cli.setMaximum(true);
+            } catch (Exception ex) {
+
+            }
+
+        } else {
             cli.moveToFront();
-        
-        
+        }
+
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -206,11 +217,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        try{
-            //UIManager.setLookAndFeel(new FlatMaterialDeepOceanIJTheme());
-            FlatDarkPurpleIJTheme.setup();
-        }
-        catch(Exception e){
+        try {
+            UIManager.setLookAndFeel(new FlatLightFlatIJTheme());
+            //FlatDarkPurpleIJTheme.setup();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -225,9 +235,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     new FrmPrincipal().setVisible(true);
                 }
             });
-        }
-        else
+        } else {
             System.exit(0);
+        }
 
     }
 

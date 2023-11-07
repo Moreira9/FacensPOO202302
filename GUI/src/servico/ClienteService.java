@@ -18,10 +18,12 @@ public class ClienteService {
         return cliDao.consultar(id);
     }
     public Cliente inserir(Cliente cliente){
-        //return cliDao.cadastrar(cliente);
+        return cliDao.cadastrar(cliente);
+        /*
         Cliente c = new Cliente();
         c.setNome("Edson");
         return c;
+        */
     }
     public boolean alterar(int id, Cliente cli){
         return cliDao.alterar(cli, id);

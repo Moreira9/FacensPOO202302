@@ -166,12 +166,12 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FrmCliente telaCliente = new FrmCliente(0);
+        FrmCliente telaCliente = new FrmCliente(0, this);
         telaCliente.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+    public void atualizarTela(){
         ClienteService cli = new ClienteService();
         var lista = cli.consultar();
         DefaultTableModel dados = (DefaultTableModel) jTable1.getModel();
@@ -194,13 +194,16 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame {
                 cliente.getEstado()
             });
         }
+    }
+    private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
+        atualizarTela();
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         //clicou na linha da table
         var linha = jTable1.getSelectedRow();
         var id = jTable1.getModel().getValueAt(linha, 0).toString();
-        FrmCliente telaCliente = new FrmCliente(Integer.parseInt(id));
+        FrmCliente telaCliente = new FrmCliente(Integer.parseInt(id), this);
         telaCliente.setVisible(true);
 
     }//GEN-LAST:event_jTable1MouseClicked

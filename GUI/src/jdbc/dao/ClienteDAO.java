@@ -85,6 +85,41 @@ public class ClienteDAO implements IDao {
         }
     }
 
+    public ArrayList<Cliente> consultar(String nome) {
+        ArrayList<Cliente> lista = new ArrayList<>();
+        String sql = "select * from cliente where nome like ?";
+        PreparedStatement comando;
+        ResultSet resultado;
+        try {
+            comando = conn.prepareStatement(sql);
+            comando.setString(1, nome);
+            resultado = comando.executeQuery();
+            while (resultado.next()) {
+                Cliente cli = new Cliente();
+                cli.setId(resultado.getInt("id"));
+                cli.setNome(resultado.getString("nome"));
+                cli.setRg(resultado.getString("rg"));
+                cli.setRg(resultado.getString("rg"));
+                cli.setCpf(resultado.getString("cpf"));
+                cli.setEmail(resultado.getString("email"));
+                cli.setTelefone(resultado.getString("telefone"));
+                cli.setCelular(resultado.getString("celular"));
+                cli.setCep(resultado.getString("cep"));
+                cli.setEndereco(resultado.getString("endereco"));
+                cli.setNumero(resultado.getString("numero"));
+                cli.setComplemento(resultado.getString("complemento"));
+                cli.setBairro(resultado.getString("bairro"));
+                cli.setCidade(resultado.getString("cidade"));
+                cli.setEstado(resultado.getString("estado"));
+                lista.add(cli);
+            }
+            return lista;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+    
     @Override
     public Cliente cadastrar(Cliente cliente) {
                 String query = "insert into cliente (nome, rg, cpf, email, telefone, celular, cep, endereco, numero,\n"

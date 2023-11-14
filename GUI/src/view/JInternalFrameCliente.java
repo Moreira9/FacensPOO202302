@@ -74,6 +74,11 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame {
         jLabel1.setText("Digite o texto para pesquisa");
 
         btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,7 +178,7 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame {
 
     public void atualizarTela(){
         ClienteService cli = new ClienteService();
-        var lista = cli.consultar();
+        var lista = cli.consultar(txtPesquisa.getText() + "%");
         DefaultTableModel dados = (DefaultTableModel) jTable1.getModel();
         dados.setNumRows(0);
         for (Cliente cliente : lista) {
@@ -207,6 +212,10 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame {
         telaCliente.setVisible(true);
 
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        atualizarTela();
+    }//GEN-LAST:event_btnPesquisarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

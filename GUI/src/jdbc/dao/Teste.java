@@ -13,7 +13,9 @@ public class Teste {
         System.out.println("deu certo");
         */
         ClienteDAO cDao = new ClienteDAO();
-        System.out.println(cDao.consultar(9).getNome());
+        //System.out.println(cDao.consultar(9).getNome());
+        var lista = cDao.consultar("Edson%");
+        System.out.println(lista.get(0).getNome());
         
     }
 }

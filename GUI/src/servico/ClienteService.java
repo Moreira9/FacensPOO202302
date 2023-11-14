@@ -14,6 +14,9 @@ public class ClienteService {
     public ArrayList<Cliente> consultar(){
         return cliDao.consultar();
     }
+    public ArrayList<Cliente> consultar(String nome){
+        return cliDao.consultar(nome);
+    }
     public Cliente consultar(int id){
         return cliDao.consultar(id);
     }
